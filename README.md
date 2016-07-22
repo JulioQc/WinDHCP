@@ -12,7 +12,7 @@ Windows DHCP Debug Content Pack for Graylog
 * Windows DHCP server configured for "Enable DHCP audit logging" (https://technet.microsoft.com/en-ca/library/cc780941(v=ws.10).aspx)
 * A GELF capable log exporter/collector such as nxlog or Graylog Collector monitoring the log file path
 
-###Example of a working NXlog.conf file input/output configuration:
+###Example of a working NXlog.conf file input/output configuration (using Collector Sidecar):
 
     <Input 578f9dbc0ae2f10b1139b6a9>
         Module im_file
@@ -31,5 +31,6 @@ Windows DHCP Debug Content Pack for Graylog
         Port 5441
         OutputType  GELF
         Exec $short_message = $raw_event; # Avoids truncation of the short_message field.
+        Exec $gl2_source_collector = 'ae1187a3-48ae-42bc-a820-7033d7438dbd';
         Exec $Hostname = hostname_fqdn();
     </Output>
