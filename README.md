@@ -4,7 +4,7 @@ Windows DHCP Debug Content Pack for Graylog
 ##Includes
 
 * Input (WinDHCPLogs-gelf - GELF/UDP/5441)
-* Extractors (WinDHCP_Debug_Log)
+* Extractors (WinDHCP_Debug_Log && all ID meaning descriptions)
 * Dashboard (WinDHCP Summary)
 
 ##Requirements
